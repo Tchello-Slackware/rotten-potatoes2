@@ -40,4 +40,12 @@ jobs:
           tags: |
            macrohub/rotten-potatoes:v${{ github.run_number }}
            macrohub/rotten-potatoes:latest
+  CD:
+   - name: Kubernetes Set Context
+     uses: Azure/k8s-set-context@v2
+     with:
+     method: kubeconfig
+    # Contents of kubeconfig file
+     kubeconfig: ${{ secret.k8s_secret }}
+     
           
