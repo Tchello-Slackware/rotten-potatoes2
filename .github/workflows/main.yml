@@ -41,13 +41,12 @@ jobs:
            macrohub/rotten-potatoes:v${{ github.run_number }}
            macrohub/rotten-potatoes:latest
   CD:
+    needs: [CI]
     runs-on: ubuntu-latest
     steps:
      - name: Kubernetes Set Context
        uses: Azure/aks-set-context@v1.1
        with:
-        method: kubeconfig
-        # Contents of kubeconfig file
         kubeconfig: ${{ secrets.K8S_KUBECONFIG }}
      
           
