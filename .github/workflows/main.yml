@@ -47,7 +47,7 @@ jobs:
      - name: Kubernetes Set Context
        uses: Azure/aks-set-context@v1.1
        with:
-        method: kubeconfig
-        creds: ${{ secrets.K8S_KUBECONFIG }}
+        method: creds
+        kubeconfig: ${{ secrets.K8S_KUBECONFIG }}
      
           
