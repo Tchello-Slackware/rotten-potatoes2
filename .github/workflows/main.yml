@@ -41,7 +41,7 @@ jobs:
            macrohub/rotten-potatoes:v${{ github.run_number }}
            macrohub/rotten-potatoes:latest
   CD:
-    runs-on: ubuntu-late
+    runs-on: ubuntu-latest
     steps:
      - name: Kubernetes Set Context
        uses: Azure/aks-set-context@v1.1
