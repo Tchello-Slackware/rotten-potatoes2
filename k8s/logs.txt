@@ -1,0 +1,31 @@
+[2022-01-20 22:02:53 +0000] [1] [INFO] Starting gunicorn 20.0.4
+Traceback (most recent call last):
+  File "/usr/local/bin/gunicorn", line 8, in <module>
+    sys.exit(run())
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 58, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/app/base.py", line 228, in run
+    super().run()
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/app/base.py", line 72, in run
+    Arbiter(self).run()
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/arbiter.py", line 198, in run
+    self.start()
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/arbiter.py", line 138, in start
+    self.cfg.on_starting(self)
+  File "config.py", line 24, in on_starting
+    if not collection.find().count() > 0:
+  File "/usr/local/lib/python3.8/site-packages/pymongo/cursor.py", line 822, in count
+    return self.__collection._count(
+  File "/usr/local/lib/python3.8/site-packages/pymongo/collection.py", line 1664, in _count
+    return self.__database.client._retryable_read(
+  File "/usr/local/lib/python3.8/site-packages/pymongo/mongo_client.py", line 1460, in _retryable_read
+    server = self._select_server(
+  File "/usr/local/lib/python3.8/site-packages/pymongo/mongo_client.py", line 1278, in _select_server
+    server = topology.select_server(server_selector)
+  File "/usr/local/lib/python3.8/site-packages/pymongo/topology.py", line 241, in select_server
+    return random.choice(self.select_servers(selector,
+  File "/usr/local/lib/python3.8/site-packages/pymongo/topology.py", line 199, in select_servers
+    server_descriptions = self._select_servers_loop(
+  File "/usr/local/lib/python3.8/site-packages/pymongo/topology.py", line 215, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: mongodb:27017: [Errno -3] Temporary failure in name resolution, Timeout: 30s, Topology Description: <TopologyDescription id: 61e9dc0d7b2e7c55496ddab1, topology_type: Single, servers: [<ServerDescription ('mongodb', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mongodb:27017: [Errno -3] Temporary failure in name resolution')>]>
