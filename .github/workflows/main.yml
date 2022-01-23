@@ -46,6 +46,6 @@ jobs:
      with:
      method: kubeconfig
     # Contents of kubeconfig file
-     kubeconfig: ${{ secret.k8s_secret }}
+     kubeconfig: ${{ secret.K8S_KUBECONFIG }}
      
           
