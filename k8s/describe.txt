@@ -1,0 +1,58 @@
+Name:         web-7db8cb5779-xvthm
+Namespace:    default
+Priority:     0
+Node:         worker2/192.168.0.164
+Start Time:   Thu, 20 Jan 2022 17:17:29 -0300
+Labels:       app=web
+              pod-template-hash=7db8cb5779
+Annotations:  <none>
+Status:       Running
+IP:           10.42.2.37
+IPs:
+  IP:           10.42.2.37
+Controlled By:  ReplicaSet/web-7db8cb5779
+Containers:
+  web:
+    Container ID:   containerd://7b66cab8219477122f29c12aad877b0f53eeda1c8e49aa32ba92f51019689c71
+    Image:          fabricioveronez/rotten-potatoes:v1
+    Image ID:       docker.io/fabricioveronez/rotten-potatoes@sha256:152e90bcd9fc709ebcff1dd43eff68ccc3ebc63eeb1c575638191c1247a3c5ff
+    Port:           5000/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Thu, 20 Jan 2022 18:46:51 -0300
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    1
+      Started:      Thu, 20 Jan 2022 18:41:11 -0300
+      Finished:     Thu, 20 Jan 2022 18:41:44 -0300
+    Ready:          True
+    Restart Count:  20
+    Environment:
+      MONGODB_DB:        admin
+      MONGODB_HOST:      mongodb
+      MONGODB_PORT:      27017
+      MONGODB_USERNAME:  mongouser
+      MONGODB_PASSWORD:  mongopwd
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-s4mzj (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-s4mzj:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason   Age                    From     Message
+  ----     ------   ----                   ----     -------
+  Warning  BackOff  4m23s (x338 over 87m)  kubelet  Back-off restarting failed container
