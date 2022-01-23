@@ -44,10 +44,11 @@ jobs:
     needs: [CI]
     runs-on: ubuntu-latest
     steps:
-     - name: Kubernetes Set Context
-       uses: Azure/aks-set-context@v1.1
-       with:
-        method: creds
+    - uses: actions/checkout@v2
+    - name: Kubernetes Set Context
+      uses: Azure/k8s-set-context@v2
+      with:
+        method: kubeconfig
         kubeconfig: ${{ secrets.K8S_KUBECONFIG }}
      
           
