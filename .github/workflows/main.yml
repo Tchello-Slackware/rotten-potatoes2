@@ -48,6 +48,6 @@ jobs:
        uses: Azure/aks-set-context@v1.1
        with:
         method: kubeconfig
-        kubeconfig: ${{ secrets.K8S_KUBECONFIG }}
+        cred: ${{ secrets.K8S_KUBECONFIG }}
      
           
