@@ -38,6 +38,6 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: 
-           macrohub/rotten-potatoes:${{ github.run_number }}
+           macrohub/rotten-potatoes:v${{ github.run_number }}
            macrohub/rotten-potatoes:latest
           
