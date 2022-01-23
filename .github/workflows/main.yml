@@ -37,7 +37,7 @@ jobs:
           # Path to the Dockerfile
           file: ./src/Dockerfile
           push: true
-          tag: |
+          tags: 
            macrohub/rotten-potatoes:${{ github.run_number }}
            macrohub/rotten-potatoes:latest
           
