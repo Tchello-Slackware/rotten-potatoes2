@@ -55,7 +55,6 @@ spec:
         containers:
         - name: web
           image: macrohub/rotten-potatoes:latest
-          image: macrohub/rotten-potatoes:v1
           ports:
           -  containerPort: 5000
           env:
@@ -84,5 +83,4 @@ spec:
   - protocol: "TCP"
     port: 80
     targetPort: 5000  
-  type: NodePort
-  type: LoadBalancer
+  type: NodePort 
