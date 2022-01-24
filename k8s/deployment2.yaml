@@ -43,10 +43,6 @@ kind: Deployment
 metadata:
   name: web
 spec:
-<<<<<<< HEAD
-  replicas: 4
-=======
->>>>>>> 4b930d644e6753d78d6d2d95b0c6e2d01c2784b9
   selector:
     matchLabels:
       app: web
@@ -57,11 +53,7 @@ spec:
     spec:
         containers:
         - name: web
-<<<<<<< HEAD
-          image: macrohub/rotten-potatoes:latest
-=======
           image: macrohub/rotten-potatoes:v1
->>>>>>> 4b930d644e6753d78d6d2d95b0c6e2d01c2784b9
           ports:
           -  containerPort: 5000
           env:
@@ -90,8 +82,4 @@ spec:
   - protocol: "TCP"
     port: 80
     targetPort: 5000  
-<<<<<<< HEAD
   type: NodePort
-=======
-  type: LoadBalancer
->>>>>>> 4b930d644e6753d78d6d2d95b0c6e2d01c2784b9
