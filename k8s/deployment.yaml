@@ -43,6 +43,7 @@ kind: Deployment
 metadata:
   name: web
 spec:
+  replicas: 4
   selector:
     matchLabels:
       app: web
@@ -53,7 +54,7 @@ spec:
     spec:
         containers:
         - name: web
-          image: macrohub/rotten-potatoes:v1
+          image: macrohub/rotten-potatoes:latest
           ports:
           -  containerPort: 5000
           env:
@@ -83,14 +84,3 @@ spec:
     port: 80
     targetPort: 5000  
   type: NodePort
-
-
-
-
-
-
-  
-  
-
-
-
